@@ -1,0 +1,1 @@
+Il login funzione riceve mail e password, per il link poi a i json e il resto ora non ho tempo, occhio che la visualizza() viene ista richiamata e non cambia quando premi il tasto ma anche quando scrivi, per grafica e resto ci pensiamo poi quando funziona tutto

@@ -1,0 +1,28 @@
+.bordo{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.centra{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.testo{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.margine{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.margcont{
+  margin-top: 30%;
+}
+.left{
+  padding-left: 50%;
+}
+.right{
+  padding-right: 50%;
+}
