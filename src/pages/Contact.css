@@ -1,0 +1,13 @@
+.bordo{
+    border: 1px solid black;
+}
+.centra{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spazia{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
