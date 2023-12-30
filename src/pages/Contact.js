@@ -1,47 +1,50 @@
 import "./Contact.css"
+import React, {useState,useEffect} from 'react'
+import StampaDomande from "./Stampadomande1";
+import StampaProf from "./StampaProf";
 
 const Contact = () => {
-  let domande=[]
-  let prof=[]
-  let i=0
-  fetch('https://raw.githubusercontent.com/1Lg20/ValutazioneDocenti/main/ProfJSON.json') 
-      .then(response => response.json())
-      .then(result => {
-        result.forEach(element=>{
-          prof.push(element)
-        })
-        console.log(result)
+  const [jsonArray, setJsonArray] = useState([]);
+  const [json2Array, setjson2Array]= useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/1Lg20/ValutazioneDocenti/main/ProfJSON.json');
+        const data = await response.json();
+        setjson2Array(data);
+      } catch (error) {
+        console.error('Errore durante il recupero dei dati:', error);
+      }
+    };
 
-        console.log("lista prof: " + prof[i].nome)
-        
-      })
-  fetch('https://raw.githubusercontent.com/1Lg20/ValutazioneDocenti/main/domandeProf.json') 
-    .then(response => response.json())
-    .then(result => {
-      result.forEach(element => {
-        domande.push(element)
-      });
-      //console.log(result)
-      //console.log("domande" + domande)
-    })
-    const caricalista=()=>{
-      console.log("CARICA LISTA")
-     for(i=0;i<prof.length;i++){
-      console.log(prof[i].nome)
-      console.log(i)
-      return(<div class="col-12 entra bordo">{prof[i].nome}</div>)
-     }
-    }
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/1Lg20/ValutazioneDocenti/main/domandeProf.json');
+        const data = await response.json();
+        setJsonArray(data);
+      } catch (error) {
+        console.error('Errore durante il recupero dei dati:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
     
     return (
-      <div class="container bordo centra">
-        <div class="row spazia bordo">
-          <div class="col-8 centra bordo">
-            <input type="button" onClick={caricalista} value="CARICALISTA"></input>
+      <div className="container bordo centra">
+        <div className="row spazia bordo">
+          <div className="col-8 centra bordo">
+            < StampaDomande Arraydomande={jsonArray} />
+           
           </div>
-          <div class="col-4 centra bordo">
-            <div class="row centra bordo" >
-              {caricalista}
+          <div className="col-4 centra bordo">
+            <div className="row centra bordo" >
+             < StampaProf Arrayprof={json2Array} />
+              
             </div>
             
           </div>
