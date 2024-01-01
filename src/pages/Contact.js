@@ -4,8 +4,9 @@ import StampaDomande from "./Stampadomande1";
 import StampaProf from "./StampaProf";
 
 const Contact = () => {
-  const [jsonArray, setJsonArray] = useState([]);
+  const [jsonArray, setJsonArray] = useState([]); //stati dei 2 array
   const [json2Array, setjson2Array]= useState([])
+  //Ritorno dei 2 array dalla fetch
   useEffect(() => {
     const fetchData = async () => {
       try {
