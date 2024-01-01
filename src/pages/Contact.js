@@ -3,10 +3,39 @@ import React, {useState,useEffect} from 'react'
 import StampaDomande from "./Stampadomande1";
 import StampaProf from "./StampaProf";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+let totale=0
 const Contact = () => {
   const [jsonArray, setJsonArray] = useState([]); //stati dei 2 array
   const [json2Array, setjson2Array]= useState([])
+  const [sommaValori, setSommaValori] = useState(0);
+  const [numeroSlider, setNumeroSlider] = useState(0);
+//Funzione per controllare gli slider della pagina contact nella sezione domande
+  const onSliderChange = (nuoviValori) => {
+    const nuovaSomma = nuoviValori.reduce((acc, valore) => acc + valore, 0);
+    setSommaValori(nuovaSomma);
+    setNumeroSlider(nuoviValori.length);
+    //valori singoli
+    console.log('Valori singoli:', nuoviValori);
+
+    // Stampa il valore totale
+    console.log('Valore totale:', nuovaSomma, 'totale:', totale);
+    
+  }
+  const resetSliders = () => {
+    // Logica per il reset degli slider
+    console.log('Reset degli slider');
+    // Crea un array di lunghezza pari al numero di slider, con tutti i valori impostati a 0
+    const nuoviValori = Array(jsonArray.length).fill(0);
+
+    // Imposta il valore di ciascun slider a 0
+    document.querySelectorAll('input[type="range"]').forEach((slider) => {
+      slider.value = 0;
+    });
+    
+    // Chiamare la funzione onSliderChange per applicare la modifica
+    onSliderChange(nuoviValori);
+  };
+
   //Ritorno dei 2 array dalla fetch
   useEffect(() => {
     const fetchData = async () => {
@@ -40,12 +69,12 @@ const Contact = () => {
       <div className="container bordo centra">
         <div className="row spazia bordo">
           <div className="col-8 centra bordo">
-            < StampaDomande Arraydomande={jsonArray} />
+            < StampaDomande Arraydomande={jsonArray} onSliderChange={onSliderChange} />
            
           </div>
           <div className="col-4 centra bordo">
             <div className="row centra bordo" >
-             < StampaProf Arrayprof={json2Array} />
+             < StampaProf Arrayprof={json2Array} resetSliders={resetSliders} />
               
             </div>
             

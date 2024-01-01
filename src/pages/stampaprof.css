@@ -1,0 +1,21 @@
+
+.pulsante {
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pulsante:hover {
+    background-color: lightcyan;
+  }
+  
+  .cliccabile {
+   background-color: green;
+  }
+  
+  .non-cliccabile {
+    background-color: gray;
+    cursor: not-allowed;
+  }
