@@ -1,29 +1,49 @@
-.bordo{
-    border: 1px solid black;
-    border-radius: 5px;
-  }
-  .centra{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .testo{
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  .margine{
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  .margcont{
-    margin-top: 30%;
-  }
-  .left{
-    padding-left: 50%;
-  }
-  .right{
-    padding-right: 50%;
-  }
-  
+.container{
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+  margin-bottom: 10vh;
+}
+.all{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 253, 208);
+}
+.cc{
+  border: 1px solid rgb(206, 206, 206);
+  height: auto;
+  width: 50vw;
+  margin-top: 20vh;
+  background-color: rgb(255, 255, 255);
+}
+.t{
+  width: 100%;
+  margin-top: 3px;
+}
+.scritte{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+}
+.ris{
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+.bt{
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
