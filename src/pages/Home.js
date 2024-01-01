@@ -1,6 +1,7 @@
 import './Login.css'
 import { Outlet, Link } from "react-router-dom";
 import React, {useState,useRef} from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 let mail=""
 let pass=""
 let miaMail="prova"

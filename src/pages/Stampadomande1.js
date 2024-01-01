@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
 import './Contact.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const StampaDomande = ({Arraydomande}) => {
     const[Valoreslider,setValoreSlider] = useState(0)

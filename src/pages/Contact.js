@@ -2,6 +2,7 @@ import "./Contact.css"
 import React, {useState,useEffect} from 'react'
 import StampaDomande from "./Stampadomande1";
 import StampaProf from "./StampaProf";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Contact = () => {
   const [jsonArray, setJsonArray] = useState([]); //stati dei 2 array
