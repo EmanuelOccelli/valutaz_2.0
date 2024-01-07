@@ -4,7 +4,8 @@ import React, {useState, useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 let mail=""
 let pass=""
-
+let miaMail="prova"
+let MiaPassword="prova"
 
 const Home = () => {
   const [Credenziali, setCredenziali] = useState([]);
@@ -30,14 +31,15 @@ const Home = () => {
   }
   const [ris, setris] = useState("")
   const visualizza=()=>{
+    //Le credenziali funzionano solo con 4L per praticita
     
-    if (miaMail==mail && MiaPassword==pass){
+    if (Credenziali[1].username==mail && Credenziali[1].password==pass){
       setris(<Link to="/contact">VAI A QUESTIONARIO DOCENTI</Link>)
-    }else if(miaMail!=mail && MiaPassword==pass){
+    }else if(Credenziali[1].username!=mail && Credenziali[1].password==pass){
       setris("Nome utente sbagliato")
-    }else if(miaMail==mail && MiaPassword!=pass){
+    }else if(Credenziali[1].username==mail && Credenziali[1].password!=pass){
       setris("Password sbagliata")
-    }else if(miaMail!=mail && MiaPassword!=pass){
+    }else if(Credenziali[1].username!=mail && Credenziali[1].password!=pass){
       setris("Credenziali errate")
     }
     console.log(Credenziali)

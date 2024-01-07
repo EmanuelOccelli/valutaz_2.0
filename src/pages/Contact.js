@@ -1,7 +1,7 @@
 import "./Contact.css"
 import React, {useState,useEffect} from 'react'
 import StampaDomande from "./Stampadomande1";
-import StampaProf from "./Stampaprof";
+import StampaProf from "./StampaProf";
 import 'bootstrap/dist/css/bootstrap.min.css';
 let totale=0
 const Contact = () => {
@@ -69,7 +69,7 @@ const Contact = () => {
            
           </div>
           <div className="col-4 centra bordo">
-            <div className="row centra bordo" >
+            <div className="row" >
              < StampaProf Arrayprof={json2Array} resetSliders={resetSliders} />
               
             </div>

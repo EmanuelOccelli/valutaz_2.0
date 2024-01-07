@@ -11,11 +11,3 @@
     background-color: lightcyan;
   }
   
-  .cliccabile {
-   background-color: green;
-  }
-  
-  .non-cliccabile {
-    background-color: gray;
-    cursor: not-allowed;
-  }

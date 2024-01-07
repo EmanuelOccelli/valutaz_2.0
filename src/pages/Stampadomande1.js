@@ -1,5 +1,5 @@
 import React , {useState} from 'react'
-import './Contact.css'
+import './Stampadomande.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const StampaDomande = ({Arraydomande, onSliderChange}) => {
@@ -10,14 +10,14 @@ const StampaDomande = ({Arraydomande, onSliderChange}) => {
       nuoviValori[index] = newValue;
       setValoriSlider(nuoviValori);
   
-      //prende la funzione presa da contact per fare la media e gestire gli slider singolarmente senza farli muovere tutti assieme
+      //prende la funzione presa da contact per gestire gli slider singolarmente senza farli muovere tutti assieme
       onSliderChange(nuoviValori);
     }
 
   return (
     <div>
         {Arraydomande.map((elemento , index)=>(
-            <div key={index} className="col-12 sotto bordo">
+            <div key={index} className="col-12 bd margine">
                 <p>{elemento.question}</p>
                 <input type="range"
             min="0"
@@ -27,13 +27,9 @@ const StampaDomande = ({Arraydomande, onSliderChange}) => {
             className="form-control-range">
 
             </input>
-
+            <p>0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;5</p>
             </div>
         ))}
-        <div className="col-12 centra bordo">
-          <input type="button" value="Calcola media"></input>
-          {media !== 0 && <p>Media: {media}</p>}
-        </div>
     </div>
   )
 }
