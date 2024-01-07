@@ -1,7 +1,7 @@
 import "./Contact.css"
 import React, {useState,useEffect} from 'react'
 import StampaDomande from "./Stampadomande1";
-import StampaProf from "./StampaProf";
+import StampaProf from "./Stampaprof";
 import 'bootstrap/dist/css/bootstrap.min.css';
 let totale=0
 const Contact = () => {
@@ -22,17 +22,13 @@ const Contact = () => {
     
   }
   const resetSliders = () => {
-    // Logica per il reset degli slider
+     // reset degli slider
     console.log('Reset degli slider');
     // Crea un array di lunghezza pari al numero di slider, con tutti i valori impostati a 0
     const nuoviValori = Array(jsonArray.length).fill(0);
-
-    // Imposta il valore di ciascun slider a 0
     document.querySelectorAll('input[type="range"]').forEach((slider) => {
       slider.value = 0;
     });
-    
-    // Chiamare la funzione onSliderChange per applicare la modifica
     onSliderChange(nuoviValori);
   };
 
